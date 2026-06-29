@@ -7,3 +7,45 @@ body {
     background-repeat: no-repeat;
     background-attachment: fixed;
 }
+
+.header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 10px 30px 0 30px;
+}
+
+.header__logo_img {
+    width: 50px;
+    height: 50px;
+}
+
+.header__nav {
+    display: inline;
+}
+
+.header__ol {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+}
+.header__button {
+    border-radius: 5px;
+    color: white;
+    background-color: black;
+    height: 50px;
+    width: 90px;
+    cursor: pointer;
+}
+
+.section {
+    display: flex;
+
+}
+
+.section .section__ing {
+    justify-content: end;
+    height: 350px;
+    width: 250px;
+}
