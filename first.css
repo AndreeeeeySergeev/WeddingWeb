@@ -167,3 +167,85 @@ body {
     margin:0;
     text-align: center;
 }
+
+/* Экран загрузки */
+#loader {
+    position: fixed;
+    inset: 0;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    overflow: hidden;
+}
+
+/* Контейнер с кольцами */
+.rings {
+    position: relative;
+    width: 220px;
+    height: 100px;
+
+    /* После встречи вращаются */
+    animation: rotateTogether 1s linear 1.5s 3;
+}
+
+/* Общий стиль колец */
+.ring {
+    position: absolute;
+    border: 6px solid #d4af37;
+    border-radius: 50%;
+    box-sizing: border-box;
+}
+
+/* Большое кольцо */
+.ring-big {
+    width: 80px;
+    height: 80px;
+    left: -100px;
+
+    animation: moveBig 1.5s ease-out forwards;
+}
+
+/* Маленькое кольцо */
+.ring-small {
+    width: 65px;
+    height: 65px;
+    top: 8px;
+    right: -100px;
+
+    animation: moveSmall 1.5s ease-out forwards;
+}
+
+/* Движение большого кольца */
+@keyframes moveBig {
+    from {
+        left: -100px;
+    }
+
+    to {
+        left: 60px;
+    }
+}
+
+/* Движение маленького кольца */
+@keyframes moveSmall {
+    from {
+        right: -100px;
+    }
+
+    to {
+        right: 60px;
+    }
+}
+
+/* Три оборота */
+@keyframes rotateTogether {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
