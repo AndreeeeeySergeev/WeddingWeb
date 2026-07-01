@@ -117,7 +117,7 @@ body {
 .section .section__img {
     /*justify-content: end;*/
     height: 370px;
-    width: 330px;
+    width: 300px;
     display: grid;
     grid-template-columns: 100%;
     padding-left:0;
