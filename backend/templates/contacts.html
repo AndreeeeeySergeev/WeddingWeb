@@ -1,11 +1,12 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
     <title>Контакты</title>
-    <link rel="stylesheet" href="../static/css/first.css">
-    <script src="../static/js/index.js" defer></script>
-    <script src="../static/js/loader.js" defer></script>
+    <link rel="stylesheet" href="{% static 'css/first.css' %}">
+    <script src="{% static 'js/index.js' %}" defer></script>
+    <script src="{% static 'js/loader.js' %}" defer></script>
 </head>
 <body>
 <header class="header">
@@ -16,15 +17,15 @@
         </div>
     </div>
     <div class="header__logo">
-        <img class="header__logo_img" src="../static/img/Logo.jpg" alt="логотип сайта">
+        <img class="header__logo_img" src="{% static 'img/Logo.jpg' %}" alt="логотип сайта">
     </div>
     <nav class="header__nav">
         <ul class="header__ul">
-            <li><a href="main.html" class="header__ul_li_a">Главная</a></li>
+            <li><a href="{% url 'home' %}" class="header__ul_li_a">Главная</a></li>
             <li><a href="#" class="header__ul_li_a">Услуги</a></li>
             <li><a href="#" class="header__ul_li_a">Блог</a></li>
-            <li><a href="about.html" class="header__ul_li_a">О нас</a></li>
-            <li><a href="contacts.html" class="header__ul_li_a">Контакты</a></li>
+            <li><a href="{% url 'about' %}" class="header__ul_li_a">О нас</a></li>
+            <li><a href="{% url 'contacts' %}" class="header__ul_li_a">Контакты</a></li>
         </ul>
     </nav>
     <button type="button" class="header__button">

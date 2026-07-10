@@ -6,6 +6,12 @@ import json
 def home(request):
     return render(request, "main.html")
 
+def about(request):
+    return render(request, "about.html")
+
+def contacts(request):
+    return render(request, "contacts.html")
+
 
 @require_POST
 def order(request):
