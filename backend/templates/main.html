@@ -71,6 +71,7 @@
         <h2>Оформить заказ</h2>
 
         <form id="orderForm">
+            {% csrf_token %}
 
             <label for="firstName">Имя</label>
             <input

@@ -1,3 +1,4 @@
+console.log("Загружен js");
 let act = document.querySelectorAll(".header__ul_li_a");
 
 act.forEach(link => {
@@ -49,6 +50,7 @@ window.onclick = (event) => {
 }
 
 const form = document.getElementById("orderForm");
+const csrfToken = document.querySelector("[name=csrfmiddlewaretoken]").value;
 
 form.addEventListener("submit", async (event) => {
 
@@ -62,11 +64,12 @@ form.addEventListener("submit", async (event) => {
     };
 
     try {
-
-        const response = await fetch("http://127.0.0.1:8000/api/order/", {
+        console.log("CSRF:", csrfToken);
+        const response = await fetch("/api/order/", {
             method: "POST",
             headers: {
-                "Content-Type": "application/json"
+                "Content-Type": "application/json",
+                "X-CSRFToken": csrfToken
             },
             body: JSON.stringify(data)
         });
