@@ -1,0 +1,122 @@
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="canonical" href="main.html">
+    <link rel="icon" href="{% static 'img/favicon.avif' %}">
+    <link rel="stylesheet" href="{% static 'css/first.css' %}">
+    <script src="{% static 'js/index.js' %}" defer></script>
+    <script src="{% static 'js/loader.js' %}" defer></script>
+    <title>Заказ свадеб</title>
+</head>
+<body>
+<div id="loader">
+    <div class="rings">
+        <div class="ring ring-big"></div>
+        <div class="ring ring-small"></div>
+    </div>
+</div>
+<header class="header">
+    <div class="header__logo">
+        <img class="header__logo_img" src="{% static 'img/Logo.jpg' %}" alt="логотип сайта">
+    </div>
+        <nav class="header__nav">
+            <ul class="header__ul">
+                <li><a href="main.html" class="header__ul_li_a">Главная</a></li>
+                <li><a href="#" class="header__ul_li_a">Услуги</a></li>
+                <li><a href="#" class="header__ul_li_a">Блог</a></li>
+                <li><a href="about.html" class="header__ul_li_a">О нас</a></li>
+                <li><a href="contacts.html" class="header__ul_li_a">Контакты</a></li>
+            </ul>
+        </nav>
+    <button type="button" class="header__button" id="openModal">
+        Оформить заказ
+    </button>
+</header>
+<main>
+<section class="section">
+    <div class="section__info-block">
+        <div class="section__wrap">
+            <h1 class="section__header">Закажи свадьбу, не пожалеешь</h1>
+            <p class="section__text">Какой-то текст для создания желания купить</p>
+            <button type="button" class="section__btn">
+                Ещё одна кнопочка для чего-нибудь
+            </button>
+        </div>
+    </div>
+    <div class="section__info-block">
+        <img src="../static/img/Happy_married.jpg" class="section section__img">
+    </div>
+</section>
+</main>
+<footer class="footer">
+    <div class="footer__end">
+        <div class="footer__text">
+            <h4>Название организации</h4>
+            <p>Создаем идеальные моменты, чтобы ваша история любви запомнилась навсегда</p>
+        </div>
+    </div>
+    <div class="footer__bottom">
+        <p>&copy; 2024 Организация. Все правы защищены</p>
+    </div>
+</footer>
+<div class="modal" id="orderModal">
+
+    <div class="modal-content">
+
+        <span class="close">&times;</span>
+
+        <h2>Оформить заказ</h2>
+
+        <form id="orderForm">
+
+            <label for="firstName">Имя</label>
+            <input
+                    type="text"
+                    id="firstName"
+                    name="first_name"
+                    placeholder="Введите имя"
+                    required
+            >
+
+            <label for="lastName">Фамилия</label>
+            <input
+                    type="text"
+                    id="lastName"
+                    name="last_name"
+                    placeholder="Введите фамилию"
+                    required
+            >
+
+            <label for="phone">Телефон</label>
+            <input
+                    type="tel"
+                    id="phone"
+                    name="phone"
+                    placeholder="+7 (___) ___-__-__"
+                    required
+            >
+
+            <label for="email">Email</label>
+            <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    placeholder="example@mail.ru"
+                    required
+            >
+
+            <button type="submit">
+                Отправить заявку
+            </button>
+
+        </form>
+
+    </div>
+
+</div>
+</body>
+</html>

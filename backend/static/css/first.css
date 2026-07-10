@@ -1,0 +1,427 @@
+
+ body {
+    margin: 0;
+    min-height: 100vh;
+    background-image: url("img/Background.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 30px 0 30px;
+    width: 100%;
+    min-height: 90px;
+    box-sizing: border-box;
+}
+
+.header__logo_img {
+    width: 100px;
+    height: 100px;
+    padding-left: 50px;
+}
+
+.header__nav {
+    display: inline;
+}
+
+.header__ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    list-style: none;
+    gap: 30px;
+}
+
+.header__ul_li_a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    font-size: 16px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: color 0.3s ease-in-out, opacity 0.3s ease;
+
+}
+.header__ul_li_a:hover {
+    color: #d4af37;
+    opacity: 0.8;
+}
+.header__ul_li_a.active {
+    color: #d4af37;
+    opacity: 0.8;
+    font-weight: 700;
+    text-decoration: underline;
+    text-underline-offset: 4px;
+}
+
+.header__button {
+    border-radius: 30px;
+    color: white;
+    font-weight: 700;
+    background: linear-gradient(135deg, #f7e7a8, #d4af37);
+    border: none;
+    padding: 12px 28px;
+    cursor: pointer;
+    transition: .5s ease;
+
+    box-shadow:
+            0 4px 8px rgba(0,0,0,.2),
+            0 0 8px rgba(212,175,55,.3);
+
+}
+
+.header__button:hover {
+    box-shadow:
+            inset 0 3px 6px rgba(0,0,0,.25),
+            inset 0 -1px 2px rgba(255,255,255,.25);
+
+}
+
+.section {
+    display: grid;
+    width: 100%;
+    grid-template-columns: 60% 40%;
+}
+
+.section__wrap {
+    padding: 52px;
+    padding-left: 80px;
+    padding-right: 0;
+}
+
+.section__info-block {
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.section__header {
+    font-size: 50px;
+    margin: 0;
+    margin-bottom: 52px;
+}
+
+.section__text {
+    font-size: 20px;
+    margin: 0;
+    margin-bottom: 52px;
+}
+
+.section .section__img {
+    /*justify-content: end;*/
+    height: 370px;
+    width: 250px;
+    display: grid;
+    grid-template-columns: 100%;
+    padding-left:0;
+    padding-right: 60px;
+}
+
+.section__btn {
+    border-radius: 30px;
+    border: 2px solid #d4af37;
+    padding: 12px 30px;
+    cursor: pointer;
+    color: #d4af37;
+    background: white;
+    font-size: 18px;
+    text-transform: uppercase;
+    margin: 0;
+}
+
+.section__btn:hover {
+    box-shadow:
+            inset 0 3px 6px rgba(0,0,0,.25),
+            inset 0 -1px 2px rgba(255,255,255,.25);
+}
+
+
+.footer{
+    padding: 20px 20px;
+    margin: 0;
+}
+
+.footer__end {
+    width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 30px;
+}
+
+.footer__text h4 {
+    color: #d4af37;
+    margin-bottom: 15px;
+    font-size: 18px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.footer__bottom {
+    margin:0;
+    text-align: center;
+}
+
+
+#loader {
+    position: fixed;
+    inset: 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    /* Сайт слегка виден */
+    background: rgba(255,255,255,.25);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+
+    z-index: 9999;
+    overflow: hidden;
+
+    transition: opacity .35s ease;
+}
+
+/* Контейнер */
+
+.rings{
+    position:relative;
+    width:220px;
+    height:100px;
+}
+
+/* Кольца */
+
+.ring{
+    position:absolute;
+
+    border-radius:50%;
+    box-sizing:border-box;
+
+    border:6px solid #d4af37;
+}
+
+/* Большое */
+
+.ring-big{
+    width:80px;
+    height:80px;
+    left:-100px;
+}
+
+/* Маленькое */
+
+.ring-small{
+    width:65px;
+    height:65px;
+    top:8px;
+    right:-100px;
+}
+
+/* ---------- Полная заставка ---------- */
+
+.loader-full .ring-big{
+    animation:moveBig 1.5s ease-out forwards;
+}
+
+.loader-full .ring-small{
+    animation:moveSmall 1.5s ease-out forwards;
+}
+
+.loader-full .rings{
+    animation:rotateTogether 1s linear 1.5s 3;
+}
+
+/* ---------- Короткая ---------- */
+
+.loader-short .ring-big{
+    animation:moveBig .7s ease-out forwards;
+}
+
+.loader-short .ring-small{
+    animation:moveSmall .7s ease-out forwards;
+}
+
+/* Без вращения */
+
+.loader-short .rings{
+    animation:none;
+}
+
+/* ---------- Движение ---------- */
+
+@keyframes moveBig{
+
+    from{
+        left:-100px;
+    }
+
+    to{
+        left:60px;
+    }
+
+}
+
+@keyframes moveSmall{
+
+    from{
+        right:-100px;
+    }
+
+    to{
+        right:60px;
+    }
+
+}
+
+/* ---------- Вращение ---------- */
+
+@keyframes rotateTogether{
+
+    from{
+        transform:rotate(0deg);
+    }
+
+    to{
+        transform:rotate(360deg);
+    }
+
+}
+
+.modal{
+
+    position:fixed;
+    inset:0;
+
+    display:none;
+
+    justify-content:center;
+    align-items:center;
+
+    background:rgba(0,0,0,.45);
+
+    backdrop-filter:blur(6px);
+
+    z-index:10000;
+
+}
+
+.modal-content{
+
+    width:420px;
+
+    background:#fff;
+
+    border-radius:18px;
+
+    padding:35px;
+
+    position:relative;
+
+    box-shadow:0 20px 50px rgba(0,0,0,.25);
+
+    animation:popup .3s ease;
+
+}
+
+.modal-content h2{
+
+    text-align:center;
+
+    margin-bottom:25px;
+
+}
+
+.modal-content form{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:14px;
+
+}
+
+.modal-content input{
+
+    padding:14px;
+
+    border:1px solid #ddd;
+
+    border-radius:10px;
+
+    font-size:16px;
+
+}
+
+.modal-content input:focus{
+
+    outline:none;
+
+    border-color:#d4af37;
+
+}
+
+.modal-content button{
+
+    margin-top:15px;
+
+    padding:14px;
+
+    border:none;
+
+    border-radius:30px;
+
+    background:linear-gradient(135deg,#f7e7a8,#d4af37);
+
+    color:white;
+
+    font-size:17px;
+
+    font-weight:bold;
+
+    cursor:pointer;
+
+}
+
+.close{
+
+    position:absolute;
+
+    top:15px;
+
+    right:18px;
+
+    font-size:28px;
+
+    cursor:pointer;
+
+}
+
+@keyframes popup{
+
+    from{
+
+        opacity:0;
+
+        transform:scale(.85);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:scale(1);
+
+    }
+
+}
